@@ -62,8 +62,8 @@ router.get('/edit/:id', (req, res, next) => {
     }
     else
     {
-      // show the dit view
-      res.render('/books/edit', {title: 'Edit Book', book: bookToEdit});
+      // show the edit view
+      res.render('books/edit', { title: 'Edit Book', book: bookToEdit });
     }
   });
 
