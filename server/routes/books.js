@@ -27,7 +27,7 @@ router.get('/add', (req, res, next) => {
 });
 
 // POST Route for processingthe Add page - CREATE Operations
-router.post('/details', (req, res, next) => {
+router.post('/add', (req, res, next) => {
   let newBook = Book({
     "title": req.body.title,
     "description": req.body.description,
