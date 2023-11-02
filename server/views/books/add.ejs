@@ -1,57 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="link-to-bootstrap.css"> <!-- Include Bootstrap CSS here -->
+    <style>
+        /* Larger form input elements */
+        .larger-input {
+            font-size: 20px; /* Adjust the font size as needed */
+            padding: 10px;  /* Adjust the padding as needed */
+            margin: 10px 0; /* Adjust the margin as needed */
+        }
 
+        /* Larger buttons */
+        .larger-button {
+            font-size: 20px; /* Adjust the font size as needed */
+            padding: 10px 20px; /* Adjust the padding as needed */
+            margin: 10px; /* Adjust the margin as needed */
+        }
 
-<div class="container">
-    <div class="row">
-        <div class="offset-md-3 col-md-6">
-        <h1><%= title %></h1>
-        
-        <form  class="form" method="POST">
-            <div class="form-group">
-                <label for="titleTextField">Book Title</label>
-                <input type="text" class="form-control"
-                id="titleTextField"
-                placeholder="Enter the Book Title"
-                name="title" required> 
+        /* Center the content vertically and horizontally */
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container center-content">
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+                <h1><%= title %></h1>
+
+                <form class="form center-block" method="POST">
+                    <div class="form-group">
+                        <label for="titleTextField">Book Title</label>
+                        <input type="text" class="form-control larger-input"
+                            id="titleTextField"
+                            placeholder="Enter the Book Title"
+                            name="title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descriptionTextArea">Book Description</label>
+                        <textarea type="text" class="form-control larger-input"
+                            id="descriptionTextArea"
+                            placeholder="Enter the Book Description"
+                            name="description" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priceTextField">Price</label>
+                        <input type="text" class="form-control larger-input"
+                            id="priceTextField"
+                            placeholder="Enter the Book Price"
+                            name="price" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="authorTextField">Author</label>
+                        <input type="text" class="form-control larger-input"
+                            id="authorTextField"
+                            placeholder="Enter the Book's Author"
+                            name="author" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genreTextField">Genre</label>
+                        <input type="text" class="form-control larger-input"
+                            id="genreTextField"
+                            placeholder="Enter the Book Genre"
+                            name="genre" required>
+                    </div>
+
+                    <button class="btn btn-primary larger-button" type="submit">
+                        <i class="fas fa-edit"></i> Submit
+                    </button>
+
+                    <a href="/book-list" class="btn btn-warning larger-button">
+                        <i class="fas fa-undo"></i> Cancel
+                    </a>
+                </form>
             </div>
-
-            <div class="form-group">
-                <label for="descriptionTextArea">Book Description</label>
-                <textarea type="text" class="form-control"
-                id="descriptionTextArea"
-                placeholder="Enter the Book Description"
-                name="description" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="priceTextField">Price</label>
-                <input type="text" class="form-control"
-                id="priceTextField"
-                placeholder="Enter the Book Price"
-                name="price" required> 
-            </div>
-
-            <div class="form-group">
-                <label for="authorTextField">Author</label>
-                <input type="text" class="form-control"
-                id="authorTextField"
-                placeholder="Enter the Book's Author"
-                name="author" required> 
-            </div>
-
-            <div class="form-group">
-                <label for="genreTextField">Genre</label>
-                <input type="text" class="form-control"
-                id="genreTextField"
-                placeholder="Enter the Book Genre"
-                name="genre" required> 
-            </div>
-
-            <button class="btn btn-primary" type="submit">
-                <i class="fas fa-edit"></i> Submit</button>
-
-            <a href="/book-list" class="btn btn-warning">
-                <i class="fas fa-undo"></i> Cancel</a>
-        </form>
-      </div> 
+        </div>
     </div>
-</div>
+</body>
+</html>
