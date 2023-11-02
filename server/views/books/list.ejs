@@ -1,0 +1,55 @@
+<% include ../partials/header.ejs %>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <h3>Favourite Books List </h3>
+
+          <a href="/book-list/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a book</a>
+          <br>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+          
+                <tr class="d-flex">
+                  <th class="text-center">Title</th>
+                  <th class="text-center">Description</th>    
+                  <th class="text-center">Price</th>
+                  <th class="text-center">Author</th>
+                  <th class="text-center">Genre</th>                                 
+                  <th class="text-center"></th>
+                  <th class="text-center"></th>
+                </tr>
+              
+               
+                <!-- Template Row -->
+                <% for(let count = 0; count < books.length; count++) { %>
+                <tr>
+                  <td class="text-center"><%= books[count].title %></td>
+                  <td class="text-center"><%= books[count].description %></td>
+                  <td class="text-center">$<%= books[count].price %></td>
+                  <td class="text-center"><%= books[count].author %></td>
+                  <td class="text-center"><%= books[count].genre %></td>
+                  <td class="text-center col-2">
+                    <a href="/book-list/edit/<%= books[count]._id %>" class="btn btn-primary">
+                    <i class="fas fa-pencil-alt"></i> Edit</a>
+             
+
+                  <td class="text-center col-2">
+                    <a href="/book-list/delete/<%= books[count]._id %>" class="btn btn-danger">                              
+                    <i class="fas fa-trash-alt"></i> Delete</a>
+                  </td>
+                </tr>
+                <% } %>
+             
+            </table>
+          </div>
+          
+          </div>
+        </div>
+      </div>
+
+
+<% include ../partials/footer.ejs %>
+
+
