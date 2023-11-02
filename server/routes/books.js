@@ -27,7 +27,7 @@ router.get('/add', (req, res, next) => {
 });
 
 // POST Route for processingthe Add page - CREATE Operations
-router.post('/add', (req, res, next) => {
+router.post('/details', (req, res, next) => {
   let newBook = Book({
     "title": req.body.title,
     "description": req.body.description,
@@ -108,7 +108,7 @@ router.get('/delete/:id', (req, res, next) => {
     else
     {
       // refresh the book list
-      res.redirect('/books/list');
+      res.redirect('/book-list');
     }
   });
  
